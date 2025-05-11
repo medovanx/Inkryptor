@@ -2,6 +2,10 @@
 
 Inkryptor is a simple encryption tool for both images and text. It provides a user-friendly interface for encrypting images using a XOR-based algorithm and text using the Caesar cipher.
 
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/c6afac89-bfaf-4583-9e6d-78052229aa54" alt="Logo" width="300" height="300">
+</div>
+
 ## Features
 
 ### Image Encryption
