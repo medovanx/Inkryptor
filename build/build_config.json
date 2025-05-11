@@ -60,6 +60,10 @@
   {
    "optionDest": "datas",
    "value": "M:/Mohamed/Programming/Inkryptor/src;src/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "M:/Mohamed/Programming/Inkryptor/resources;resources/"
   }
  ],
  "nonPyinstallerOptions": {

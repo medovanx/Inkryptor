@@ -4,15 +4,14 @@ from PyQt5 import QtWidgets, uic, QtCore, QtGui
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 from src.utils.image_processor import ImageProcessor
 from src.utils.text_encryptor import TextEncryptor
+from src.utils.resource_path import resource_path
 
 class InkryptorApp: 
     def __init__(self):
-        # Load the UI file  
-        ui_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'inkryptor.ui')
+        # Load the UI files  
         self.app = QtWidgets.QApplication(sys.argv)
-        self.window = uic.loadUi(ui_file)
-        icon_path = os.path.join(os.path.abspath("."), "resources", "icons", "icon.png")
-        self.window.setWindowIcon(QtGui.QIcon(icon_path))
+        self.window = uic.loadUi(resource_path(r'src/ui/inkryptor.ui'))
+        self.window.setWindowIcon(QtGui.QIcon(resource_path(r"resources/icons/icon.png")))
 
         # Initialize processors
         self.image_processor = ImageProcessor()
