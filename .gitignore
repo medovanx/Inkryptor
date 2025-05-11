@@ -1,0 +1,6 @@
+.venv/
+*.ico
+desktop.ini
+__pycache__/
+sample_data/
+build/*.exe

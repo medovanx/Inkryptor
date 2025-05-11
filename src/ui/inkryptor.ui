@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Inkryptor - Encryption Tool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../resources/icons/icon.png</normaloff>../../resources/icons/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+        QMainWindow {
+          background-color: #F5F5F5;
+          color: #2C3E50;
+        }
+
+        QTabWidget::pane {
+          border: 1px solid #CCCCCC;
+          border-radius: 4px;
+          padding: 5px;
+          background-color: #F5F5F5;
+        }
+
+        QTabBar::tab {
+          background-color: #E0E0E0;
+          color: #2C3E50;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          min-width: 140px;
+          min-height: 30px;
+          padding: 5px 10px;
+          margin-right: 2px;
+        }
+
+        QTabBar::tab:selected {
+          background-color: #3498DB;
+          color: white;
+          font-weight: bold;
+          margin-bottom: -1px;
+        }
+
+        QPushButton {
+          background-color: #3498DB;
+          color: white;
+          border-radius: 5px;
+          padding: 8px 15px;
+          min-width: 80px;
+          font-weight: bold;
+        }
+
+        QPushButton:hover {
+          background-color: #2980B9;
+        }
+
+        QPushButton:pressed {
+          background-color: #1F618D;
+        }
+
+        QLabel {
+          color: #2C3E50;
+          font-size: 12px;
+        }
+
+        QLabel#lblOriginalImage, QLabel#lblProcessedImage,
+        QLabel#lblOriginalHistogram, QLabel#lblProcessedHistogram {
+          background-color: #FFFFFF;
+          border: 2px solid #CCCCCC;
+          border-radius: 8px;
+        }
+
+        QLineEdit, QSpinBox {
+          background-color: #FFFFFF;
+          color: #2C3E50;
+          border: 1px solid #CCCCCC;
+          border-radius: 4px;
+          padding: 5px;
+        }
+
+        QTextEdit {
+          background-color: #FFFFFF;
+          color: #2C3E50;
+          border: 1px solid #CCCCCC;
+          border-radius: 4px;
+          padding: 5px;
+          font-family: Consolas, monospace;
+          font-size: 12px;
+        }
+
+        QMenuBar {
+          background-color: #F5F5F5;
+          color: #2C3E50;
+          border-bottom: 1px solid #CCCCCC;
+        }
+
+        QMenuBar::item {
+          background-color: transparent;
+          padding: 5px 10px;
+        }
+
+        QMenuBar::item:selected {
+          background-color: #3498DB;
+          color: white;
+        }
+
+        QMenu {
+          background-color: #F5F5F5;
+          color: #2C3E50;
+          border: 1px solid #CCCCCC;
+        }
+
+        QMenu::item:selected {
+          background-color: #3498DB;
+          color: white;
+        }
+
+        QStatusBar {
+          background-color: #F5F5F5;
+          color: #2C3E50;
+          border-top: 1px solid #CCCCCC;
+        }
+
+        #btnDecryptImage, #btnDecryptText {
+          background-color: #E74C3C;
+          color: white;
+          border-radius: 5px;
+          padding: 8px 15px;
+          min-width: 80px;
+          font-weight: bold;
+        }
+
+        #btnDecryptImage:hover, #btnDecryptText:hover {
+          background-color: #C0392B;
+        }
+
+        #btnDecryptImage:pressed, #btnDecryptText:pressed {
+          background-color: #A93226;
+        }
+      </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabImage">
+       <attribute name="title">
+        <string>Image Encryption</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="btnLoadImage">
+            <property name="text">
+             <string>Load Image</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnEncryptImage">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDecryptImage">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSaveImage">
+            <property name="text">
+             <string>Save Image</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="labelKey">
+            <property name="text">
+             <string>Encryption Key:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txtImageKey">
+            <property name="text">
+             <string>123</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="lblOriginalImage">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>Original Image</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblProcessedImage">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>Processed Image</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="lblOriginalHistogram">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>Original Histogram</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblProcessedHistogram">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>Processed Histogram</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabText">
+       <attribute name="title">
+        <string>Text Encryption</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="labelShift">
+            <property name="text">
+             <string>Caesar Shift Key:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="spinShiftKey">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>25</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnEncryptText">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDecryptText">
+            <property name="text">
+             <string>Decrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnClearText">
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Original Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="txtOriginal">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="placeholderText">
+           <string>Enter text to encrypt/decrypt...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Processed Text:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="txtProcessed">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Encrypted/Decrypted text will appear here...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
