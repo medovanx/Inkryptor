@@ -40,7 +40,7 @@ class ImageProcessor:
             for j in range(result.shape[1]):
                 # XOR each channel with the key
                 for k in range(result.shape[2]):
-                    result[i, j, k] = result[i, j, k] ^ (numeric_key)
+                    result[i, j, k] = result[i, j, k] ^ (numeric_key & 0xFF)
 
         return result
 
